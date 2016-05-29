@@ -1,5 +1,8 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.beans.PropertyChangeListener;
 
 /**
  * Created by CostaHu on 2016/5/11.
@@ -20,19 +23,19 @@ public class FlowersSalesFrame extends JFrame{
     private JTextArea jta = new JTextArea();
 
     //Init the constructor
-    public FlowersSalesFrame(){
+    public FlowersSalesFrame() {
         //Construct the up area
-        JPanel panel = new JPanel(new GridLayout(1,3,10,5));
+        JPanel panel = new JPanel(new GridLayout(1, 3, 10, 5));
         panel.add(jbt_kc);
         panel.add(jbt_tb);
         panel.add(jbt_se);
-        this.add(panel,BorderLayout.NORTH);
-       //Construct the down left area
-        JPanel panel1 = new JPanel(new GridLayout(2,1));
+        this.add(panel, BorderLayout.NORTH);
+        //Construct the down left area
+        JPanel panel1 = new JPanel(new GridLayout(1, 2));
         panel1.add(jbt_sm);
         panel1.add(jbt_cr);
         //Construct the down right area
-        JPanel panel2 = new JPanel(new GridLayout(3,2));
+        JPanel panel2 = new JPanel(new GridLayout(3, 2));
         panel2.add(jlb_sl);
         panel2.add(jtf_sl);
         panel2.add(jlb_nb);
@@ -41,10 +44,22 @@ public class FlowersSalesFrame extends JFrame{
         panel2.add(jtf_at);
         //Combine the two areas as the down area
         JPanel panel3 = new JPanel(new BorderLayout());
-        panel3.add(panel1,BorderLayout.WEST);
-        panel3.add(panel2,BorderLayout.EAST);
-        this.add(panel3,BorderLayout.SOUTH);
+        panel3.add(panel1, BorderLayout.EAST);
+        panel3.add(panel2, BorderLayout.WEST);
+        this.add(panel3, BorderLayout.SOUTH);
         //Construct the middle area
-        this.add(jta,BorderLayout.CENTER);
+        this.add(jta, BorderLayout.CENTER);
+        //Register the button jbt_kc
+        jbt_kc.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame =new FlowerFrame();
+                frame.setSize(500,400);
+                frame.setLocationRelativeTo(null);
+                frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+                frame.setTitle("库存信息");
+                frame.pack();
+                frame.setVisible(true);
+            }
+        });
     }
 }

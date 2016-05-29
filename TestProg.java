@@ -6,7 +6,7 @@ import javax.swing.*;
 public class TestProg {
     public static void main(String[] args) {
         JFrame frame = new FlowersSalesFrame();
-        frame.setSize(500,400);
+        frame.setSize(600,400);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setTitle("销售统计");
