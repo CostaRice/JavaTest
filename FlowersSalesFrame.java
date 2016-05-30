@@ -53,7 +53,7 @@ public class FlowersSalesFrame extends JFrame{
         jbt_kc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame =new FlowerFrame();
-                frame.setSize(500,400);
+                frame.setSize(600,400);
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
                 frame.setTitle("库存信息");
