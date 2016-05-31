@@ -1,7 +1,7 @@
 /**
  * Created by CostaHu on 2016/5/11.
  */
-public abstract class Flower {
+public class Flower {
     //two basic variables for the Flower class
     private double price;
     private int amount = 100;
