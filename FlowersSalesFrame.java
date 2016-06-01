@@ -49,7 +49,7 @@ public class FlowersSalesFrame extends JFrame{
         this.add(panel3, BorderLayout.SOUTH);
         //Construct the middle area
         this.add(jta, BorderLayout.CENTER);
-        //Register the button jbt_kc
+        //Register listener the button jbt_kc
         jbt_kc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFrame frame =new FlowerFrame();
