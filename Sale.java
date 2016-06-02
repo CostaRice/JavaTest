@@ -8,28 +8,27 @@ public class Sale {
     private boolean available = false;
 
     //Init the constructor
-    public void Sale(String seller,String number,int amount){
+    public void Sale(String seller, String number, int amount) {
         this.seller = seller;
         this.number = number;
         this.amount = amount;
     }
 
     //Declare the getX() method for input information
-    public String getSeller(){
+    public String getSeller() {
         return seller;
     }
-    public String getNumber(){
+
+    public String getNumber() {
         return number;
     }
-    public int getAmount(){
+
+    public int getAmount() {
         return amount;
     }
 
     //Unfinished two methods for getting and checking amount
-    public boolean checkAmount(){
+    public boolean checkAmount() {
         return available;
-    }
-    public int getDepositoryAmount(){
-        return amount;
     }
 }

@@ -19,7 +19,7 @@ public class Flower {
     }
     //Set new amount
     protected void  setAmount(int amount){
-        this.amount = amount;
+        this.amount -= amount;
     }
     //Get flower price
     protected  double getPrice(){
