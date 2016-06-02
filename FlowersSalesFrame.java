@@ -24,16 +24,19 @@ public class FlowersSalesFrame extends JFrame{
 
     //Init the constructor
     public FlowersSalesFrame() {
+
         //Construct the up area
         JPanel panel = new JPanel(new GridLayout(1, 3, 10, 5));
         panel.add(jbt_kc);
         panel.add(jbt_tb);
         panel.add(jbt_se);
         this.add(panel, BorderLayout.NORTH);
+
         //Construct the down left area
         JPanel panel1 = new JPanel(new GridLayout(1, 2));
         panel1.add(jbt_sm);
         panel1.add(jbt_cr);
+
         //Construct the down right area
         JPanel panel2 = new JPanel(new GridLayout(3, 2));
         panel2.add(jlb_sl);
@@ -42,13 +45,16 @@ public class FlowersSalesFrame extends JFrame{
         panel2.add(jtf_nb);
         panel2.add(jlb_at);
         panel2.add(jtf_at);
+
         //Combine the two areas as the down area
         JPanel panel3 = new JPanel(new BorderLayout());
         panel3.add(panel1, BorderLayout.EAST);
         panel3.add(panel2, BorderLayout.WEST);
         this.add(panel3, BorderLayout.SOUTH);
+
         //Construct the middle area
         this.add(jta, BorderLayout.CENTER);
+
         //Register listener to the button jbt_kc
         jbt_kc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
