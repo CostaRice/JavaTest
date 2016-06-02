@@ -22,6 +22,10 @@ public class FlowersSalesFrame extends JFrame{
     private JTextField jtf_at = new JTextField(16);
     private JTextArea jta = new JTextArea();
 
+    //Declare two instances of class Sale and FlowerList
+    Sale sale = new Sale();
+    FlowerList flowerList = new FlowerList();
+
     //Init the constructor
     public FlowersSalesFrame() {
 
@@ -67,5 +71,7 @@ public class FlowersSalesFrame extends JFrame{
                 frame.setVisible(true);
             }
         });
+
+        //
     }
 }
