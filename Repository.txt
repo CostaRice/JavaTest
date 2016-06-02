@@ -1,0 +1,3 @@
+Rose: 100
+Carnation: 100
+Lily: 100
