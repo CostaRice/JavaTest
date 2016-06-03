@@ -29,6 +29,7 @@ public class FlowersSalesFrame extends JFrame{
     //Init the constructor
     public FlowersSalesFrame() {
 
+
         //Construct the up area
         JPanel panel = new JPanel(new GridLayout(1, 3, 10, 5));
         panel.add(jbt_kc);
@@ -71,7 +72,5 @@ public class FlowersSalesFrame extends JFrame{
                 frame.setVisible(true);
             }
         });
-
-        //
     }
 }
