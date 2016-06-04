@@ -2,7 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.beans.PropertyChangeListener;
 
 /**
  * Created by CostaHu on 2016/5/11.
@@ -63,7 +62,7 @@ public class FlowersSalesFrame extends JFrame{
         //Register listener to the button jbt_kc
         jbt_kc.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                JFrame frame =new FlowerFrame();
+                JFrame frame = new FlowerFrame();
                 frame.setSize(600,400);
                 frame.setLocationRelativeTo(null);
                 frame.setDefaultCloseOperation(EXIT_ON_CLOSE);

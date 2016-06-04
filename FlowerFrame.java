@@ -1,3 +1,5 @@
+import com.sun.corba.se.spi.activation.Repository;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -26,9 +28,10 @@ public class FlowerFrame extends JFrame {
     private JLabel lily_Name = new JLabel("茉莉");
     private JLabel lily_Amount = new JLabel();
 
+
     public FlowerFrame(){
         //Construct the main frame
-        JPanel panel = new JPanel(new GridLayout(4,3));
+        JPanel panel = new JPanel(new GridLayout(4, 3));
         panel.add(lb1);
         panel.add(lb2);
         panel.add(lb3);
@@ -45,8 +48,8 @@ public class FlowerFrame extends JFrame {
         panel.add(lily_Name);
         panel.add(lily_Amount);
 
-        this.add(panel,BorderLayout.CENTER);
-        this.add(button,BorderLayout.SOUTH);
+        this.add(panel, BorderLayout.CENTER);
+        this.add(button, BorderLayout.SOUTH);
 
         //Add listener to the button,,close the frame when press the button
         button.addActionListener(new ActionListener() {
