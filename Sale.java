@@ -6,12 +6,14 @@ public class Sale {
     private String number;
     private int amount;
     private boolean available = false;
+    static int count = 0;
 
     //Init the constructor
     public void Sale(String seller, String number, int amount) {
         this.seller = seller;
         this.number = number;
         this.amount = amount;
+        count++;
     }
 
     //Declare the getX() method for input information

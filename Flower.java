@@ -4,7 +4,7 @@
 public class Flower {
     //two basic variables for the Flower class
     private double price;
-    private int amount = 100;
+    private static int amount = 100;
     private String number;
     //Init the constructor
     public Flower(){
