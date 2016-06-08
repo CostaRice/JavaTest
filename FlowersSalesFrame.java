@@ -71,5 +71,12 @@ public class FlowersSalesFrame extends JFrame{
                 frame.setVisible(true);
             }
         });
+
+        //Register listener to JTextField jtf_sl
+        jtf_sl.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
     }
 }

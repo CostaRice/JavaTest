@@ -49,7 +49,6 @@ public class FlowerFrame extends JFrame {
         panel.add(lily_Amount);
         //
         FlowerList flowerList = new FlowerList();
-        flowerList.setRose_Amount(10);
         rose_Amount.setText(String.valueOf(flowerList.getRose_Amount()));
         carnation_Amount.setText(String.valueOf(flowerList.getCarnation_Amount()));
         lily_Amount.setText(String.valueOf(flowerList.getLily_Amount()));

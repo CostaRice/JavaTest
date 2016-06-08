@@ -22,14 +22,14 @@ public class FlowerList extends Flower{
     static Flower Carnation = new Flower(CARNATION_PRICE, CARNATION_NUMBER);
     static Flower Lily = new Flower(LILY_PRICE, LILY_NUMBER);
 
-    protected void setRose_Amount(int amount){
-        rose_Amount -= amount;
+    protected void setRose_Amount(int sale){
+        rose_Amount -= sale;
     }
-    protected  void setCarnation_Amount(int amount){
-        carnation_Amount -= amount;
+    protected  void setCarnation_Amount(int sale){
+        carnation_Amount -= sale;
     }
-    protected void setLily_Amount(int amount){
-        lily_Amount -= amount;
+    protected void setLily_Amount(int sale){
+        lily_Amount -= sale;
     }
 
     protected int getRose_Amount(){
@@ -40,5 +40,16 @@ public class FlowerList extends Flower{
     }
     protected int getLily_Amount(){
         return lily_Amount;
+    }
+
+    //For instance of resetting repository amount
+    protected void resetRose_Amount(int amount){
+        rose_Amount = amount;
+    }
+    protected void resetLilly_Amount(int amount){
+        lily_Amount = amount;
+    }
+    protected void resetCarnation_Amount(int amount){
+        carnation_Amount = amount;
     }
 }
