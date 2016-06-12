@@ -72,10 +72,10 @@ public class FlowersSalesFrame extends JFrame{
             }
         });
 
-        //Register listener to JTextField jtf_sl
-        jtf_sl.addActionListener(new ActionListener() {
+        //Register listener to JButton jbt_se
+        jbt_se.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
+                
             }
         });
     }
