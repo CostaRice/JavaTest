@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.lang.invoke.WrongMethodTypeException;
 
 /**
  * Created by CostaHu on 2016/5/11.
@@ -74,8 +76,9 @@ public class FlowersSalesFrame extends JFrame{
 
         //Register listener to JButton jbt_se
         jbt_se.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                
+            public void actionPerformed(ActionEvent e) throws IllegalArgumentException {
+                Sale sale = new Sale();
+
             }
         });
     }
