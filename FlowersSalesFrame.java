@@ -2,10 +2,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.lang.invoke.WrongMethodTypeException;
-import java.util.DoubleSummaryStatistics;
-import java.util.IntSummaryStatistics;
 
 /**
  * Created by CostaHu on 2016/5/11.
@@ -80,7 +76,6 @@ public class FlowersSalesFrame extends JFrame{
                 JFrame frame = new FlowerFrame();
                 frame.setSize(600,400);
                 frame.setLocationRelativeTo(null);
-                frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
                 frame.setTitle("库存信息");
                 frame.pack();
                 frame.setVisible(true);
@@ -98,6 +93,7 @@ public class FlowersSalesFrame extends JFrame{
                 if (input_number.equals(flowerList.ROSE_NUMBER)) {
                     if(input_amount <= flowerList.getRose_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        flowerList.setRose_Amount(input_amount);
                         setSaleRecord(sale);
                     }
                     else
@@ -106,6 +102,7 @@ public class FlowersSalesFrame extends JFrame{
                 else if (input_number.equals(flowerList.CARNATION_NUMBER)){
                     if (input_amount <= flowerList.getCarnation_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        flowerList.setCarnation_Amount(input_amount);
                         setSaleRecord(sale);
                     }
                     else
@@ -114,6 +111,7 @@ public class FlowersSalesFrame extends JFrame{
                 else if (input_number.equals(flowerList.LILY_NUMBER)){
                     if (input_amount<=flowerList.getLily_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        flowerList.setLily_Amount(input_amount);
                         setSaleRecord(sale);
                     }
                     else
@@ -121,6 +119,26 @@ public class FlowersSalesFrame extends JFrame{
                 }
                 else
                     throw new IllegalArgumentException("Wrong input for flower number");
+            }
+        });
+
+        //Add listener for jbt_cr
+        jbt_cr.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                jtf_sl.setText("");
+                jtf_at.setText("");
+                jtf_nb.setText("");
+            }
+        });
+
+        //Add listener for jbt_tb
+        jbt_tb.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JFrame frame = new ChartFrame();
+                frame.setLocationRelativeTo(null);
+                frame.setSize(400,300);
+                frame.setTitle("销售图表");
+                frame.setVisible(true);
             }
         });
     }
