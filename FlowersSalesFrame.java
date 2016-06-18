@@ -24,7 +24,6 @@ public class FlowersSalesFrame extends JFrame{
     private JTextArea jta = new JTextArea();
 
     //Declare two instances of class Sale and FlowerList
-    Sale sale = new Sale();
     FlowerList flowerList = new FlowerList();
 
     //Init the constructor
@@ -77,8 +76,34 @@ public class FlowersSalesFrame extends JFrame{
         //Register listener to JButton jbt_se
         jbt_se.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) throws IllegalArgumentException {
-                Sale sale = new Sale();
+                FlowerList flowerList = new FlowerList();
+                String input_number = jtf_nb.getText();
+                String input_seller = jtf_sl.getText();
+                int input_amount = Integer.parseInt(jtf_at.getText());
 
+                if (input_number == flowerList.ROSE_NUMBER) {
+                    if(input_amount <= flowerList.getRose_Amount()){
+                        Sale sale = new Sale(input_seller,input_number,input_amount);
+                    }
+                    else
+                        throw new IllegalArgumentException("Wrong input for rose amount !!!");
+                }
+                if (input_number ==flowerList.CARNATION_NUMBER){
+                    if (input_amount <= flowerList.getCarnation_Amount()){
+                        Sale sale = new Sale(input_seller,input_number,input_amount);
+                    }
+                    else
+                        throw new IllegalArgumentException("Wrong input for carnation amount!!!");
+                }
+                if (input_number == flowerList.LILY_NUMBER){
+                    if (input_amount<=flowerList.getLily_Amount()){
+                        Sale sale = new Sale(input_seller,input_number,input_amount);
+                    }
+                    else
+                        throw new IllegalArgumentException("Wrong input for lily amount!!!" );
+                }
+                else
+                    throw new IllegalArgumentException("Wrong input for flower number");
             }
         });
     }

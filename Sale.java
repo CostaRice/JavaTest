@@ -2,14 +2,14 @@
  * Created by CostaHu on 2016/5/11.
  */
 public class Sale {
-    private String seller;
-    private String number;
-    private int amount;
+    String seller;
+    String number;
+    int amount;
     private boolean available = false;
     static int count = 0;
 
     //Init the constructor
-    public void Sale(String seller, String number, int amount) {
+    Sale(String seller, String number, int amount) {
         this.seller = seller;
         this.number = number;
         this.amount = amount;
