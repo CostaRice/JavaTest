@@ -95,6 +95,7 @@ public class FlowersSalesFrame extends JFrame{
                         Sale sale = new Sale(input_seller,input_number,input_amount);
                         flowerList.setRose_Amount(input_amount);
                         setSaleRecord(sale);
+                        SaleList saleList = new SaleList(sale);
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for rose amount !!!");
@@ -104,6 +105,8 @@ public class FlowersSalesFrame extends JFrame{
                         Sale sale = new Sale(input_seller,input_number,input_amount);
                         flowerList.setCarnation_Amount(input_amount);
                         setSaleRecord(sale);
+                        SaleList saleList = new SaleList(sale);
+
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for carnation amount!!!");
@@ -113,6 +116,7 @@ public class FlowersSalesFrame extends JFrame{
                         Sale sale = new Sale(input_seller,input_number,input_amount);
                         flowerList.setLily_Amount(input_amount);
                         setSaleRecord(sale);
+                        SaleList saleList = new SaleList(sale);
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for lily amount!!!" );
