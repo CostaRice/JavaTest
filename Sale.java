@@ -33,4 +33,33 @@ public class Sale {
     public boolean checkAmount() {
         return available;
     }
+
+    //Get name from flower number
+    public String getName(Sale sale){
+        if (sale.getNumber().equals("001")){
+            return "玫瑰";
+        }
+        if (sale.getNumber().equals("002")){
+            return "康乃馨";
+        }
+        if (sale.getNumber().equals("003")){
+            return "茉莉";
+        }
+        else
+            return "wrong number";
+    }
+
+    //Get price for the flower
+    public double getPrice(Sale sale){
+        if (sale.getNumber().equals("001"))
+            return FlowerList.ROSE_PRICE;
+        if (sale.getNumber().equals("002")){
+            return FlowerList.CARNATION_PRICE;
+        }
+        if (sale.getNumber().equals("003")){
+            return FlowerList.LILY_PRICE;
+        }
+        else
+            return 0.0;
+    }
 }

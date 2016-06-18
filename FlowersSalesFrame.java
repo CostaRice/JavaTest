@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.lang.invoke.WrongMethodTypeException;
+import java.util.DoubleSummaryStatistics;
+import java.util.IntSummaryStatistics;
 
 /**
  * Created by CostaHu on 2016/5/11.
@@ -21,14 +23,24 @@ public class FlowersSalesFrame extends JFrame{
     private JTextField jtf_sl = new JTextField(16);
     private JTextField jtf_nb = new JTextField(16);
     private JTextField jtf_at = new JTextField(16);
-    private JTextArea jta = new JTextArea();
+    JTextArea jta = new JTextArea();
+
+    //Set the TextArea after press the button jbt_sm
+    public void setSaleRecord(Sale sale){
+        jta.append("\n"+Integer.toString(sale.count)+"\t");
+        jta.append(sale.getNumber()+"\t");
+        jta.append(sale.getName(sale)+"\t");
+        jta.append(sale.getSeller()+"\t");
+        jta.append(Integer.toString(sale.getAmount())+"\t");
+        jta.append(Double.toString(sale.getPrice(sale))+"\t");
+        jta.append(Double.toString(sale.getPrice(sale)*sale.getAmount())+"\t");
+    }
 
     //Declare two instances of class Sale and FlowerList
     FlowerList flowerList = new FlowerList();
 
     //Init the constructor
     public FlowersSalesFrame() {
-
 
         //Construct the up area
         JPanel panel = new JPanel(new GridLayout(1, 3, 10, 5));
@@ -59,6 +71,8 @@ public class FlowersSalesFrame extends JFrame{
 
         //Construct the middle area
         this.add(jta, BorderLayout.CENTER);
+        jta.setText("序号\t"+"编号\t"+"名称\t"+"销售员\t"+"数量\t"+"单价\t"+"总价\t");
+
 
         //Register listener to the button jbt_kc
         jbt_kc.addActionListener(new ActionListener() {
@@ -74,30 +88,33 @@ public class FlowersSalesFrame extends JFrame{
         });
 
         //Register listener to JButton jbt_se
-        jbt_se.addActionListener(new ActionListener() {
+        jbt_sm.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) throws IllegalArgumentException {
                 FlowerList flowerList = new FlowerList();
                 String input_number = jtf_nb.getText();
                 String input_seller = jtf_sl.getText();
                 int input_amount = Integer.parseInt(jtf_at.getText());
 
-                if (input_number == flowerList.ROSE_NUMBER) {
+                if (input_number.equals(flowerList.ROSE_NUMBER)) {
                     if(input_amount <= flowerList.getRose_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        setSaleRecord(sale);
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for rose amount !!!");
                 }
-                if (input_number ==flowerList.CARNATION_NUMBER){
+                else if (input_number.equals(flowerList.CARNATION_NUMBER)){
                     if (input_amount <= flowerList.getCarnation_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        setSaleRecord(sale);
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for carnation amount!!!");
                 }
-                if (input_number == flowerList.LILY_NUMBER){
+                else if (input_number.equals(flowerList.LILY_NUMBER)){
                     if (input_amount<=flowerList.getLily_Amount()){
                         Sale sale = new Sale(input_seller,input_number,input_amount);
+                        setSaleRecord(sale);
                     }
                     else
                         throw new IllegalArgumentException("Wrong input for lily amount!!!" );
